@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
+    qApp->setApplicationName("The Wiggler");
+    qApp->setApplicationVersion("0.1.0");
+    qApp->setOrganizationName("aatwo");
+
     qRegisterMetaType<uint64_t>("int64_t");
     qRegisterMetaType<WiggleData>("WiggleData");
 

@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         wigglecore.cpp \
-        wigglecoreworker.cpp
+        wigglecoreworker.cpp \
+        wiggleinput.cpp
 
 RESOURCES += qml.qrc
 
@@ -37,4 +38,5 @@ HEADERS += \
     QtUtils.h \
     wigglecore.h \
     wigglecoreworker.h \
-    wiggledata.h
+    wiggledata.h \
+    wiggleinput.h

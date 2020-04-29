@@ -12,12 +12,24 @@ void WiggleInput::moveMouseRelative(long x, long y)
 #ifdef Q_OS_WIN
     moveMouseRelative_Win(x, y);
 #endif
+#ifdef Q_OS_OSX
+    moveMouseRelative_OSX(x, y);
+#endif
+#ifdef Q_OS_LINUX
+    moveMouseRelative_Lin(x, y);
+#endif
 }
 
 void WiggleInput::moveMouseAbsolute(long x, long y)
 {
 #ifdef Q_OS_WIN
     moveMouseAbsolute_Win(x, y);
+#endif
+#ifdef Q_OS_OSX
+    moveMouseAbsolute_OSX(x, y);
+#endif
+#ifdef Q_OS_LINUX
+    moveMouseAbsolute_Lin(x, y);
 #endif
 }
 

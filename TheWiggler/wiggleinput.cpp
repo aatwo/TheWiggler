@@ -5,6 +5,7 @@
 #endif
 
 #ifdef Q_OS_OSX
+    #include <Carbon/Carbon.h>
 #endif
 
 void WiggleInput::moveMouseRelative(long x, long y)
@@ -62,12 +63,30 @@ void WiggleInput::moveMouseAbsolute_Win(long x, long y)
 #ifdef Q_OS_OSX
 void WiggleInput::moveMouseRelative_OSX(long x, long y)
 {
+    CGPoint currentMousePos;
+    {
+        CGEventRef event = CGEventCreate(nullptr);
+        currentMousePos = CGEventGetLocation(event);
+    }
 
+    CGPoint pos;
+    pos.x = currentMousePos.x + x;
+    pos.y = currentMousePos.y + y;
+
+    CGEventRef moveEvent = CGEventCreateMouseEvent(nullptr, kCGEventMouseMoved, pos, kCGMouseButtonLeft);
+    CGEventPost(kCGHIDEventTap, moveEvent);
+    CFRelease(moveEvent);
 }
 
 void WiggleInput::moveMouseAbsolute_OSX(long x, long y)
 {
+    CGPoint pos;
+    pos.x = x;
+    pos.y = y;
 
+    CGEventRef moveEvent = CGEventCreateMouseEvent(nullptr, kCGEventMouseMoved, pos, kCGMouseButtonLeft);
+    CGEventPost(kCGHIDEventTap, moveEvent);
+    CFRelease(moveEvent);
 }
 #endif
 

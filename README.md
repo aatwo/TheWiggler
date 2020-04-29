@@ -4,4 +4,4 @@ This is a small Qt / QML / C++  application that moves your mouse to prevent scr
 
 See the <b>releases</b> page to download a ready to run version.
 
-Currently it only builds on <b>Windows</b>.
+Currently it builds on both <b>Windows</b> and <b>OSX</b> and releases for both can be found on the release page (so far I've only tested it on OSX High Sierra 10.13).

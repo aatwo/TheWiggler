@@ -23,7 +23,7 @@ For Windows deployment you can use the windeployqt.exe which is found in the Qt 
 	C:/Qt/5.14.0/msvc2016_64/bin/windeployqt.exe
 
 Simply run this tool using the following parameters:
-	./windeployqt.exe <path-to-build-folder>\TheWiggler.exe --qmldir <path-to-repo-root>\TheWiggler
+	./windeployqt.exe <b>{path-to-build-folder}</b>\TheWiggler.exe --qmldir <b>{path-to-repo-root}</b>\TheWiggler
 	
 This will copy all the dependencies required to run TheWiggler.exe on any machine into the folder containing TheWiggler.exe.
 
@@ -32,6 +32,6 @@ For OSX deployment you can use the macdeployqt tool found in the Qt install dire
 	$HOME/Qt/5.14.2/clang_64/bin/macdeployqt
 	
 Simply run this tool using the following parameters:
-	./windeployqt.exe <path-to-build-folder>\TheWiggler.app -qmldir=<path-to-repo-root>\TheWiggler
+	./windeployqt.exe <b>{path-to-build-folder}</b>\TheWiggler.app -qmldir=<b>{path-to-repo-root}</b>\TheWiggler
 	
 This will pack your .app file with all the required Qt framework dependencies required to run the app on any machine.

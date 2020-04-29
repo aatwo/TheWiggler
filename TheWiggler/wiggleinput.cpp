@@ -7,17 +7,19 @@
 #ifdef Q_OS_OSX
 #endif
 
-#ifdef Q_OS_WIN
 void WiggleInput::moveMouseRelative(long x, long y)
 {
+#ifdef Q_OS_WIN
     moveMouseRelative_Win(x, y);
+#endif
 }
 
 void WiggleInput::moveMouseAbsolute(long x, long y)
 {
+#ifdef Q_OS_WIN
     moveMouseAbsolute_Win(x, y);
-}
 #endif
+}
 
 #ifdef Q_OS_WIN
 void WiggleInput::moveMouseRelative_Win(long x, long y)

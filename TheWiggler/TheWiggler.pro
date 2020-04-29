@@ -21,7 +21,9 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
-LIBS += -luser32
+win32 {
+    LIBS += -luser32
+}
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

@@ -16,11 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         wigglecore.cpp \
-        wigglecoreworker.cpp
+        wigglecoreworker.cpp \
+        wiggleinput.cpp
 
 RESOURCES += qml.qrc
 
-LIBS += -luser32
+win32 {
+    LIBS += -luser32
+}
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -37,4 +40,5 @@ HEADERS += \
     QtUtils.h \
     wigglecore.h \
     wigglecoreworker.h \
-    wiggledata.h
+    wiggledata.h \
+    wiggleinput.h

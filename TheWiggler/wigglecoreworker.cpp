@@ -6,7 +6,7 @@
 #include <QDateTime>
 #include <QDebug>
 
-#include <Windows.h>
+#include <wiggleinput.h>
 
 WiggleCoreWorker::WiggleCoreWorker(QObject *parent) : QObject(parent)
 {
@@ -90,7 +90,7 @@ void WiggleCoreWorker::mouseMoveUpdate()
     computeRelativeMouseMovementValues(currentTimestamp, x, y);
 
     qDebug() << "to move: x: " << x << ", y: " << y;
-    moveMouseRelative(x, y);
+    WiggleInput::moveMouseRelative(x, y);
 
     horizontalPixelsMoved += abs(x);
     verticalPixelsMoved += abs(y);
@@ -109,28 +109,4 @@ void WiggleCoreWorker::mouseMoveUpdate()
         mouseMoveUpdateTimer->stop();
         intervalTimer->start();
     }
-}
-
-void WiggleCoreWorker::moveMouseRelative(long x, long y)
-{
-    INPUT Input = { 0 };
-    Input.type = INPUT_MOUSE;
-
-    Input.mi.dx = (LONG)x;
-    Input.mi.dy = (LONG)y;
-    Input.mi.dwFlags = MOUSEEVENTF_MOVE; // | MOUSEEVENTF_ABSOLUTE
-
-    SendInput(1, &Input, sizeof(INPUT));
-}
-
-void WiggleCoreWorker::moveMouseAbsolute(long x, long y)
-{
-    INPUT Input = { 0 };
-    Input.type = INPUT_MOUSE;
-
-    Input.mi.dx = (LONG)x;
-    Input.mi.dy = (LONG)y;
-    Input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE;
-
-    SendInput(1, &Input, sizeof(INPUT));
 }

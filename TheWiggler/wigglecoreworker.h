@@ -2,6 +2,7 @@
 #define WIGGLECOREWORKER_H
 
 #include <QObject>
+#include <QTimer>
 
 #include <wiggledata.h>
 

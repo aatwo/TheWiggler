@@ -22,6 +22,7 @@ Currently, the build has only been tested on Windows 10 and macOS High Sierra 10
 Once you have built a release version of the application you may wish to deploy so it can be run on other machines by collecting all the shared library dependencies.
 
 # Windows deployment
+
 For Windows deployment you can use the `windeployqt.exe` which is found in the Qt install directory. For example:
 
 ```
@@ -37,6 +38,7 @@ Simply run this tool using the following parameters:
 This will copy all the dependencies required to run `TheWiggler.exe` on any machine into the folder containing `TheWiggler.exe`.
 
 # macOS deployment
+
 For OSX deployment you can use the `macdeployqt` tool found in the Qt install directory. For example:
 
 ```
@@ -46,7 +48,7 @@ $HOME/Qt/5.14.2/clang_64/bin/macdeployqt
 Simply run this tool using the following parameters:
 
 ```
-./macdeployqt {path-to-build-folder}\TheWiggler.app -qmldir=<b>{path-to-repo-root}\TheWiggler
+./macdeployqt {path-to-build-folder}\TheWiggler.app -qmldir={path-to-repo-root}\TheWiggler
 ```
 	
 This will pack your `.app` file with all the required Qt framework dependencies required to run the app on any machine.

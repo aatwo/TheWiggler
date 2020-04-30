@@ -72,3 +72,7 @@ export PATH=~/Qt/5.14.2/gcc_64/:$PATH
 **Note:** For some reason the current version of linuxdeployqt does not appear to work if the qmldir path specified is not an absolute path.
 
 This will copy all the dependencies required to run `TheWiggler` on any machine into the folder containing `TheWiggler`.
+
+# Known issues
+
+- On Ubuntu VM guests under Virtual Box you must disable `Input->Mouse Integration` otherwise the mouse cannot be programatically moved.

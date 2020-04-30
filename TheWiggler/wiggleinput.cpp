@@ -1,11 +1,18 @@
 #include "wiggleinput.h"
 
+#include <QCursor>
+#include <QDebug>
+
 #ifdef Q_OS_WIN
     #include <Windows.h>
 #endif
 
 #ifdef Q_OS_OSX
     #include <Carbon/Carbon.h>
+#endif
+
+#ifdef Q_OS_LINUX
+    #include <X11/Xlib.h>
 #endif
 
 void WiggleInput::moveMouseRelative(long x, long y)
@@ -93,11 +100,29 @@ void WiggleInput::moveMouseAbsolute_OSX(long x, long y)
 #ifdef Q_OS_LINUX
 void WiggleInput::moveMouseRelative_Lin(long x, long y)
 {
+    Display* display = XOpenDisplay(0);
+    Window rootWindow = XRootWindow(display, 0);
 
+    int currentX = 0;
+    int currentY = 0;
+    {
+        Window root, child;
+        int rootX, rootY;
+        unsigned int mask;
+
+        XQueryPointer(display, rootWindow, &root, &child, &rootX, &rootY, &currentX, &currentY, &mask);
+    }
+
+    XWarpPointer(display, None, rootWindow, 0, 0, 0, 0, currentX + x, currentY + y);
+    XFlush(display);
 }
 
 void WiggleInput::moveMouseAbsolute_Lin(long x, long y)
 {
+    Display* display = XOpenDisplay(0);
+    Window rootWindow = XRootWindow(display, 0);
 
+    XWarpPointer(display, None, rootWindow, 0, 0, 0, 0, x, y);
+    XFlush(display);
 }
 #endif

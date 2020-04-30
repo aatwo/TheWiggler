@@ -25,6 +25,10 @@ win32 {
     LIBS += -luser32
 }
 
+linux-g++ | linux-g++-64 | linux-g++-32 {
+    LIBS += -lX11
+}
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 

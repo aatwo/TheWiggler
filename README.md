@@ -4,7 +4,7 @@ This is a small Qt / QML / C++  application that moves your mouse to prevent scr
 
 See the **releases** page to download a ready to run version.
 
-Currently, it builds on both **Windows** and **macOS** and releases for both can be found on the release page (so far I've only tested it on Windows 10 and macOS High Sierra 10.13).
+Currently, it builds on **Windows**, **macOS** and **Ubuntu** and releases for Windows and macOS can be found on the release page (so far I've only tested these on Windows 10 and macOS High Sierra 10.13).
 
 # Build instructions
 
@@ -12,10 +12,11 @@ Qt is the main dependency and can be downloaded for free from https://www.qt.io.
 
 - For Windows users you will also need Visual Studio 2017 installed if you are using the latest Qt release (5.14.2).
 - For macOS users you will need XCode which the Qt installer should prompt you to install if it is missing.
+- For Linux users users you will need an X11 environment and on Ubuntu specifically the following additional packages installed: **build-essential** and **libgl-mesa-dev**.
 
-Once the dependencies are installed you should be able to open the project in Qt Creator and run / build it.
+Once the dependencies are installed you should be able to open the project in Qt Creator and build / run it.
 
-Currently, the build has only been tested on Windows 10 and macOS High Sierra 10.13.
+Currently, the build has only been tested on Windows 10, macOS High Sierra 10.13 and Ubuntu 20.04.
 
 # Deployment instructions
 

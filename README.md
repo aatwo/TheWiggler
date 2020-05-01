@@ -1,6 +1,6 @@
 # TheWiggler
 
-This is a small Qt / QML / C++  application that moves your mouse to prevent screensavers and auto locking. It is moderately configurable via a QML UI but typically you can just run it and start it with the default settings.
+This is a small Qt / QML / C++  application that moves your mouse to prevent screensavers and auto locking. It is moderately configurable via a QML UI but typically you can run it with the default settings.
 
 Currently, it builds on **Windows**, **macOS** and **Ubuntu** and releases for each can be found on the **releases** page.
 

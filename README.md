@@ -73,4 +73,4 @@ This will copy all the dependencies required to run `TheWiggler` on any machine 
 
 # Known issues
 
-- On Ubuntu VM guests under Virtual Box you must disable `Input->Mouse Integration` otherwise the mouse cannot be programatically moved.
+- On Ubuntu VM guests under Virtual Box you must disable `Input->Mouse Integration` otherwise the mouse cannot be programmatically moved.
